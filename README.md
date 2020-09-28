@@ -12,3 +12,6 @@ Besides that we provide the showcase plugin of Vemas.Inside under `/plugin`
 
 This example only demonstrates via code the possibility to get/pass data from/to our API.
 The plugin itself is not a working example!
+
+### An working example of the JavaScript code can be opened at StackBlitz.com
+[https://stackblitz.com/edit/vemas-nextgen-apicall-example?file=index.js](https://stackblitz.com/edit/vemas-nextgen-apicall-example?file=index.js)
