@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>vng.plugin.insideplugin</RootNamespace>
+    <AssemblyName>InsidePlugin</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>InsidePlugin.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if not exist &quot;D:\scholzmsconsulting\Vemas.nextGen\Vemas.NextGEN-Dev\Vemas.nextGen.Api\bin\Debug\netcoreapp3.1\PlugIns\$(ProjectName)&quot; mkdir &quot;D:\scholzmsconsultingVemas.nextGen\Vemas.NextGEN-Dev\Vemas.nextGen.Api\bin\Debug\netcoreapp3.1\PlugIns\$(ProjectName)&quot;&#xD;&#xA;&#xD;&#xA;xcopy  &quot;$(TargetDir)*&quot; &quot;D:\scholzmsconsulting\Vemas.nextGen\Vemas.NextGEN-Dev\Vemas.nextGen.Api\bin\Debug\netcoreapp3.1\PlugIns\$(ProjectName)&quot; /E /R /Y&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Vemas.NextGEN.Core" Version="1.7.0" />
+    <PackageReference Include="Vemas.NextGen.DataAccess" Version="1.6.0" />
+    <PackageReference Include="Vemas.NextGen.PluginCore" Version="1.3.0" />
+  </ItemGroup>
+
+</Project>
